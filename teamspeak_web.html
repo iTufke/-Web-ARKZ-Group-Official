@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="ARKZ">
+<title>ARKZ TeamSpeak Server</title>
+    <link rel="icon" href="/static/photo/ARKZ_Logo_v1c2.ico">
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="static/js/script.js"></script>
+    <script src="static/js/tocbot.min.js"></script>
+</head>
+
+<body> 
+    <script>
+        // Default theme is dark
+        if (!window.localStorage.getItem('theme')) {
+            window.localStorage.setItem('theme', 'dark');
+        }
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "| Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "| Light"
+            }
+        })();
+    </script>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo">
+                <a style="color: rgb(255, 255, 255);">⊹ 𝔸ℝ𝕂ℤ 𝔾𝕣𝕠𝕦𝕡 ⊹</a>
+                <a href="https://arkz.su" style="margin-left: 50px; font-family: 'FiraCodeFont';">ARKZ · Website</a>
+                <a href="https://discord.gg/nPBdRQMvSd" style="margin-left: 50px; font-family: 'FiraCodeFont';" target="_blank">ARKZ · Discord</a>
+                <a href="https://steamcommunity.com/groups/arkzgroup" style="margin-left: 50px; font-family: 'FiraCodeFont';" target="_blank">ARKZ · Steam Group</a>
+            </div>
+            <span class="rainbow-gradient" style="float:right; font-family: 'FiraCodeFont';">"Public & Gamers"</span>
+            <!-- <div class="menu navbar-right">
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>             
+            </div> -->
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="">ARKZ Group</a><a id="mobile-toggle-theme"> | &nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+        </div>
+    </nav>
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+<div class="main">
+    <div class="container profile-container">
+    <div class="intro">
+        <div class="avatar">
+            <img src="/static/photo/ARKZ_Logo_v1c2.png">
+        </div>
+        <div class="nickname">ARKZ TeamSpeak Server</div>
+        <div class="description"><p class="blink">🔌 服务器IP: ts.arkz.su 🔌</p>
+        <div class="description"><p class="blink">🎮 可使用 TeamSpeak 3 / TeamSpeak 6 连接 🎮</p>
+</div>
+        <!-- <div class="links">
+                    <a class="link-item" title="ARKZ Minecraft Server" href="https://mc.arkz.su">
+                        
+                        <i class="iconfont icon-blog"></i>
+                    </a>              
+                    <a class="link-item" title="ARKZ TeamSpeak Server" target="_blank" rel="noopener" href="https://ts.arkz.su">                                              
+                        <i class="iconfont icon-github"></i>
+                    </a>
+        </div> -->
+    </div>
+</div>
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        2025
+        <span>© ARKZ Group & iTufke</span>
+        <!-- Runed Time -->
+        <i class="fa fa-cog fa-spin fa-1x fa-fw"></i><!-- Dynamic gear icon -->
+        <span> | ARKZ TeamSpeak Server was created  <span id="days" style="font-weight:800; color:#ED712E;"> </span> Days ago | <a href="https://icp.gov.moe/?keyword=20266677" target="_blank">萌ICP备20266677号</a></span>
+        <script>
+         let s1 = '2026-01-17';
+        s1 = new Date(s1.replace(/-/g, "/"));
+        s2 = new Date();
+        let days = s2.getTime() - s1.getTime();
+        let number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+        document.getElementById('days').innerHTML = number_of_days;
+        </script>
+    </div>
+</footer>
+    </div>
+</body>
+</html>
