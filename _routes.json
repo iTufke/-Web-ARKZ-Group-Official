@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "if": "http.host == 'web.mc.arkz.su'",
+      "then": {
+        "rewrite": "/minecraft_web.html"
+      }
+    },
+    {
+      "if": "http.host == 'web.ts.arkz.su'",
+      "then": {
+        "rewrite": "/teamspeak_web.html"
+      }
+    },
+    {
+      "if": "http.host == 'arkz.su'",
+      "then": {
+        "rewrite": "/index.html"
+      }
+    }
+  ]
+}
